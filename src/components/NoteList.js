@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router'
+
 import { connect } from 'react-redux'
 import { fetchNotes, updateCurrentNote } from '../actions'
 
@@ -26,7 +28,8 @@ class NoteList extends React.Component {
         <ul>
           { notes.map((note, i) =>
             <li key={i} onClick={ this.handleClick.bind(this, note.id)} >
-            <a>{ note.title  }</a></li>
+              <Link to={`/notes/${note.id}`}>{ note.title  }</Link>
+            </li>
           ) }
         </ul>
       </div>)

@@ -7,7 +7,7 @@ class NoteCreate extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {note: '', tasks: []}
+    this.state = {note: ''}
   }
 
   handleInputChange(event){

@@ -5,11 +5,11 @@ export default function(state=[], action){
     case 'ADD_NOTE':
       return [...state, action.payload ]
     case 'UPDATE_NOTE':
-      return state.map(note => {
-        if (note.id === action.payload.id) {
-          return action.payload
-        } else {
+      return state.map((note) => {
+        if (note.id !== action.payload.id ) {
           return note
+        } else {
+          return action.payload
         }
       })
     default:

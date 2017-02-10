@@ -24,3 +24,16 @@ export function updateCurrentNote(noteId){
     payload: noteId
   }
 }
+
+export function updateNote(noteParams){
+  axios.patch(`http://localhost:3000/api/v1/notes/${noteParams.id}`, noteParams.note )
+                .then(response => response.data )
+  return {
+    type: 'UPDATE_NOTE',
+    payload: {
+      id: noteParams.id,
+      body: noteParams.note.body,
+      title: noteParams.note.title
+    }
+  }
+}

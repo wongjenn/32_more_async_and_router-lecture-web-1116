@@ -8,4 +8,9 @@ const rootReducer = combineReducers({
   currentNote: currentNoteReducer
 })
 
+// state {
+// note: [], // all the notes,
+// currentNote: // id of the selected note
+// }
+
 export default rootReducer

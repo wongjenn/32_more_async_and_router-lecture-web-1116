@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App'
+import { Router, browserHistory } from 'react-router'
+import routes from './routes'
 
 import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise'
@@ -12,5 +13,5 @@ import { Provider } from 'react-redux'
 const store = createStore(rootReducer, applyMiddleware(promiseMiddleware) )
 
 ReactDOM.render( <Provider store={store}>
-  <App  />
+  <Router history={browserHistory} routes={routes} />
 </Provider>, document.getElementById('container'));
