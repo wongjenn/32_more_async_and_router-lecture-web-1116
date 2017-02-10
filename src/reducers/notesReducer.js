@@ -12,6 +12,8 @@ export default function(state=[], action){
           return action.payload
         }
       })
+    case 'DELETE_NOTE':
+      return state.filter(note => note.id !== action.payload)
     default:
       return state
   }

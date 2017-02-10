@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { addNote } from '../actions'
 
+
 class NoteCreate extends React.Component {
 
   constructor(props){
