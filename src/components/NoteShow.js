@@ -29,6 +29,8 @@ class NoteShow extends Component {
   }
 
   render(){
+    console.log(this.props.params.id)
+    console.log(this.props)
     if ( !this.props.note ) {
       return (<div>Select or Add a Note to get started...</div>)
     }
@@ -44,8 +46,7 @@ class NoteShow extends Component {
 }
 
 function mapStateToProps(state, ownProps){
-  const note = state.notes.find( note => note.id === state.currentNote )
-
+  const note = (state.currentNote) ? state.notes.find( note => note.id === state.currentNote ) : state.notes.find( note => note.id == ownProps.params.id)
   return {
     note: note
   }
